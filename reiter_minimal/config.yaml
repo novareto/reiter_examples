@@ -1,0 +1,13 @@
+name: Horsebox demo
+
+apps:
+  /:
+    component: ${dotted:demo.app.app}
+
+
+server:
+  factory: ${dotted:bjoern.run}
+  config:
+    host: 0.0.0.0
+    port: 8080
+    reuse_port: true
