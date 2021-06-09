@@ -1,0 +1,35 @@
+name: Reiter Application Middlware demo
+
+
+components:
+  assets:
+    component: ${dotted:fanstatic.Fanstatic}
+    config:
+      compile: True
+      recompute_hashes: True
+      bottom: True
+      publisher_signature: static
+
+  basic_auth:
+    component: ${dotted:wsgi_basic_auth.BasicAuth}
+    config:
+      realm: ProtectedAPP
+      users:
+        cklinger: klinger
+
+
+apps:
+  /:
+    factory: ${dotted:reiter.application.app.BrowserApplication}
+    config:
+      routes: ${dotted:reiter_middleware.routes}
+    middlewares:
+      - ${component:assets}
+      - ${component:basic_auth}
+
+server:
+  factory: ${dotted:bjoern.run}
+  config:
+    host: 0.0.0.0
+    port: 8081
+    reuse_port: true
