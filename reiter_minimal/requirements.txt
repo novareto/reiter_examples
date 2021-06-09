@@ -1,6 +1,7 @@
 bjoern
 -e git+https://github.com/HorsemanWSGI/horsebox.git#egg=horsebox
--e git+https://github.com/trollfot/horseman.git#egg=horseman
--e git+https://github.com/trollfot/roughrider.routing.git#egg=roughrider.routing
--e git+https://github.com/trollfot/roughrider.events.git#egg=roughrider.events
+-e git+https://github.com/HorsemanWSGI/horseman.git#egg=horseman
+-e git+https://github.com/HorsemanWSGI/roughrider.routing.git#egg=roughrider.routing
+-e git+https://github.com/HorsemanWSGI/roughrider.events.git#egg=roughrider.events
+-e git+https://github.com/Novareto/reiter.application.git#egg=reiter.application
 -e .

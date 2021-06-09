@@ -1,9 +1,10 @@
-name: Horsebox demo
+name: Reiter Application Minimal demo
 
 apps:
   /:
-    component: ${dotted:demo.app.app}
-
+    factory: ${dotted:reiter.application.app.BrowserApplication}
+    config:
+      routes: ${dotted:reiter_minimal.routes}
 
 server:
   factory: ${dotted:bjoern.run}
